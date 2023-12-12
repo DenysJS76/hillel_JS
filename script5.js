@@ -2,34 +2,19 @@
 // Вправа № 1
 
 const originalArray = [1, 2, 3, 4, 5]; 
-const reversedArray = [];
+const reversedArray = originalArray.reverse();
 
-for (let i = originalArray.length - 1; i >= 0; i--) {
-  const valueAtIndex = originalArray[i]
-  
-  reversedArray.push(valueAtIndex)
-}
+
 console.log(reversedArray);
+
 
 // Вправа № 2
 
-
-function arrayUnique(array) {
-    var a = array.concat();
-    for(var i=0; i<a.length; ++i) {
-        for(var j=i+1; j<a.length; ++j) {
-            if(a[i] === a[j])
-                a.splice(j--, 1);
-        }
-    }
-
-    return a;
-}
-
 const array1 = [1, 2, 3, 4, 5]; 
 const array2 = [3, 4, 5, 6, 7]; 
+const arrayValue = [...array1, ...array2]
 
-const uniqueValuesArray = arrayUnique(array1.concat(array2));
+const uniqueValuesArray = Array.from(new Set(arrayValue));
 
 console.log(uniqueValuesArray);
 
@@ -42,18 +27,11 @@ const students = [
 ];
 
 const calculateAverageGrade = (studentArgument) => {
-    let result = 0;
+    
+    const avgV2 = studentArgument.reduce((a, b) => a + b.grade, 0);
+    
+    const average = avgV2 / studentArgument.length;
 
-   
-    studentArgument.forEach((student) => {
-        result += student.grade;
-    });
-
-
-    // среднее значение
-    const average = result / studentArgument.length;
-
-    // Округление значения 4.3999999999999995
     return Math.round(average * 100) / 100;
 };
 
