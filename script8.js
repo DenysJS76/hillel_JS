@@ -9,6 +9,8 @@ function createAdder(num) {
       return arg + num;
     };
   }
+
+  
   
 const addFive = createAdder(5);
 console.log('Відповідь на завдання № 1 за умовою коли num = 3, результат:', addFive(3));
