@@ -10,7 +10,7 @@ async function getWeather() {
     const humidityElement = document.getElementById("humidity");
     const windSpeedElement = document.getElementById("windSpeed");
   
-    const apiKey = "93e0867c852631733d54b1dc94635a98"; // API_KEY в OpenWeatherMap API
+    const apiKey = "API_KEy"; // API_KEY в OpenWeatherMap API
   
     try {
       const coordinates = await getCoordinates(cityInput.value, apiKey);
